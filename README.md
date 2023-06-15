@@ -30,5 +30,5 @@ cmake --build .
 ```
 
 3. Extract the static library
-The static library and header file should be built in the `cwd`.
-Copy them to a desired location.
+The static library should be located in `build/lib`.
+Copy it to your desired location, along with the header files from `include/`.
