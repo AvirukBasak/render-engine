@@ -27,18 +27,32 @@ add_library(RenderEngine STATIC ${SOURCES})
 # Set the library name
 set_target_properties(RenderEngine PROPERTIES OUTPUT_NAME reng)
 
-# Find SFML library
-# find_package(SFML REQUIRED COMPONENTS system window graphics)
+# SFML library path
+if (WIN32)
+    set(SFML_ROOT "C:/SFML")
+elseif (APPLE)
+    set(SFML_ROOT "/usr/local/Cellar/sfml")
+elseif (UNIX AND NOT APPLE)
+    set(SFML_ROOT "/usr/lib/x86_64-linux-gnu")
+else()
+    message(FATAL_ERROR "Unsupported operating system. Please manually set the SFML_ROOT variable.")
+endif()
 
-# # Check if SFML is found
-# if (SFML_FOUND)
-#     # Include SFML directories
-#     include_directories(${SFML_INCLUDE_DIR})
-#     # Link SFML libraries
-#     target_link_libraries(RenderEngine PRIVATE sfml-system sfml-window sfml-graphics)
-# else ()
-#     message(FATAL_ERROR "SFML library not found. Please install SFML.")
-# endif ()
+# Add SFML installation prefix
+set(CMAKE_PREFIX_PATH ${SFML_ROOT} ${CMAKE_PREFIX_PATH})
+
+# Find SFML library
+# find_package(SFML 2.4 COMPONENTS system window graphics REQUIRED)
+
+# # Link against SFML libraries
+# target_link_libraries(RenderEngine PUBLIC sfml-system sfml-window sfml-graphics)
+
+# Link SFML libraries
+target_link_libraries(RenderEngine PUBLIC
+    ${SFML_ROOT}/libsfml-system.so
+    ${SFML_ROOT}/libsfml-window.so
+    ${SFML_ROOT}/libsfml-graphics.so
+)
 
 # Add any additional dependencies and checks as needed
 
