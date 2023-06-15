@@ -18,7 +18,7 @@ set(SOURCES
     src/element/TextInput.cpp
     src/element/Button.cpp
     src/util/util.cpp
-    src/util/render.cpp
+    src/render.cpp
 )
 
 # Create the static library
