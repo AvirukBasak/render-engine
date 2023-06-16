@@ -8,7 +8,7 @@
 
 namespace reng
 {
-    class ImageView : Element
+    class ImageView : public Element
     {
         std::string imagePath;
         std::string label;

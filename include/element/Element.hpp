@@ -27,7 +27,7 @@ namespace reng
         /** Sets the width and height to new values */
         void resize(int width, int height);
         /** Increments the width and height by given values */
-        void scale(int d_width, int d_height);
+        void scale(int dWidth, int dHeight);
         /** Scales the image by a multiplier */
         void scale(int multiplier);
         void hide();

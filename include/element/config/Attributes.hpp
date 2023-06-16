@@ -3,8 +3,9 @@
 
 namespace reng
 {
-    struct Attributes
+    class Attributes
     {
+    public:
         std::string name;
         int posnx;
         int posny;

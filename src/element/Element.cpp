@@ -56,6 +56,24 @@ void Element::setHeight(int height) {
     attr.height = height;
 }
 
+/** Sets the width and height to new values */
+void Element::resize(int width, int height) {
+    attr.width = width;
+    attr.height = height;
+}
+
+/** Increments the width and height by given values */
+void Element::scale(int dWidth, int dHeight) {
+    attr.width += dWidth;
+    attr.height += dHeight;
+}
+
+/** Scales the image by a multiplier */
+void Element::scale(int multiplier) {
+    attr.width *= multiplier;
+    attr.height *= multiplier;
+}
+
 void Element::hide() {
     attr.hidden = true;
 }

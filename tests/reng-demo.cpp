@@ -2,13 +2,7 @@
 
 int main(int argc, char const *argv[])
 {
-    reng::Box box(reng::Attributes ({
-        .name = "My Box",
-        .posnx = 0,
-        .posny = 0,
-        .width = 500,
-        .height = 500,
-        .hidden = false
-    }) );
+    reng::Box box(reng::Attributes("My Box", 0, 0, 500, 500, false));
+    reng::reng(box);
     return 0;
 }

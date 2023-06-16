@@ -9,7 +9,7 @@
 
 namespace reng
 {
-    class Box : Element
+    class Box : public Element
     {
         std::list<Element*> elements;
 

@@ -9,13 +9,12 @@ Box::Box(Attributes attributes)
 // Render the box and its elements
 void Box::render(sf::RenderWindow& window)
 {
-    if (attr.hidden)
-        return;
+    if (this->isHidden()) return;
 
     // Create the box shape
     sf::RectangleShape boxShape;
-    boxShape.setSize(sf::Vector2f(attr.width, attr.height));
-    boxShape.setPosition(attr.posnx, attr.posny);
+    boxShape.setSize(sf::Vector2f(this->getWidth(), this->getHeight()));
+    boxShape.setPosition(this->getPosnX(), this->getPosnY());
 
     // Set the background color
     boxShape.setFillColor(sf::Color(0xF7, 0xF7, 0xF7)); // Default: white-ish
