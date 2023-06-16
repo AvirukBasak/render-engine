@@ -2,33 +2,32 @@
 
 using namespace reng;
 
-Attributes::Attributes(AttributesT0 attributes)
-  : posnx(attributes.posnx),
-    posny(attributes.posny),
-    width(attributes.width),
-    height(attributes.height),
-    name(""),
+Attributes::Attributes(int posnx, int posny, int width, int height)
+  : name(""),
+    posnx(posnx),
+    posny(posny),
+    width(width),
+    height(height),
     hidden(false),
     callback {}
 {}
 
-
-Attributes::Attributes(AttributesT1 attributes)
-  : posnx(attributes.posnx),
-    posny(attributes.posny),
-    width(attributes.width),
-    height(attributes.height),
-    name(attributes.name),
-    hidden(attributes.hidden),
+Attributes::Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden)
+  : name(name),
+    posnx(posnx),
+    posny(posny),
+    width(width),
+    height(height),
+    hidden(hidden),
     callback {}
 {}
 
-Attributes::Attributes(AttributesT2 attributes)
-  : posnx(attributes.posnx),
-    posny(attributes.posny),
-    width(attributes.width),
-    height(attributes.height),
-    name(attributes.name),
-    hidden(attributes.hidden),
-    callback(attributes.callback)
+Attributes::Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden, std::function<void (void)> callback)
+  : name(name),
+    posnx(posnx),
+    posny(posny),
+    width(width),
+    height(height),
+    hidden(hidden),
+    callback(callback)
 {}

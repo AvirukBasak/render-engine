@@ -1,9 +1,10 @@
+#include <iostream>
 #include "element/ImageView.hpp"
 
 using namespace reng;
 
-ImageView::ImageView(const std::string& imagePath, Attributes attributes)
-    : imagePath(imagePath), Element(attributes)
+ImageView::ImageView(const std::string imagePath, Attributes attributes, const std::string label)
+    : imagePath(imagePath), Element(attributes), label(label)
 {
     if (!imagePath.empty()) {
         if (!texture.loadFromFile(imagePath)) {
@@ -26,9 +27,9 @@ void ImageView::render(sf::RenderWindow& window)
     window.draw(sprite);
 
     // Render the content as a label
-    if (!content.empty()) {
-        sf::Text labelText(content, sf::Font(), 12);
-        labelText.setPosition(x, y + height + 5);  // Position the label below the image
+    if (!label.empty()) {
+        sf::Text labelText(label, sf::Font(), 12);
+        labelText.setPosition(attr.posnx, attr.posny + attr.height + 5);  // Position the label below the image
         window.draw(labelText);
     }
 }

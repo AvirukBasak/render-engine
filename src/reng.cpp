@@ -1,8 +1,10 @@
 #include <reng.hpp>
 
-void reng::reng(Box box, int width, int height, std::function<void (sf::Window& window)> callback)
+using namespace reng;
+
+void reng::reng(Box box, std::function<void (sf::Window& window)> callback)
 {
-    sf::RenderWindow window(sf::VideoMode(width, height), "Box Example");
+    sf::RenderWindow window(sf::VideoMode(box.getWidth(), box.getHeight()), box.getName());
 
     // Render the Box and its elements
     box.render(window);

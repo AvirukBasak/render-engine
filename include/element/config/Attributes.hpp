@@ -3,29 +3,18 @@
 
 namespace reng
 {
-    struct AttributesT0
+    struct Attributes
     {
+        std::string name;
         int posnx;
         int posny;
         int width;
         int height;
-    };
-
-    struct AttributesT1 : public AttributesT0
-    {
-        std::string name;
         bool hidden;
-    };
-
-    struct AttributesT2 : public AttributesT1
-    {
         std::function<void (void)> callback;
-    };
 
-    struct Attributes : public AttributesT2
-    {
-        Attributes(AttributesT0 attr);
-        Attributes(AttributesT1 attr);
-        Attributes(AttributesT2 attr);
+        Attributes(int posnx, int posny, int width, int height);
+        Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden);
+        Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden, std::function<void (void)> callback);
     };
 }

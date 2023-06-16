@@ -10,12 +10,14 @@ namespace reng
 {
     class ImageView : Element
     {
+        std::string imagePath;
+        std::string label;
         sf::Texture texture;
         sf::Sprite sprite;
 
     public:
-        ImageView(const std::string& imagePath);
-        ImageView(const std::string& imagePath, Attributes attributes);
+        ImageView(const std::string imagePath, std::string label = "");
+        ImageView(const std::string imagePath, Attributes attributes, const std::string label = "");
         void render(sf::RenderWindow& window) override;
     };
 }
