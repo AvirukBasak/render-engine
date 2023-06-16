@@ -3,19 +3,19 @@
 using namespace reng;
 
 // Constructor
-Box::Box(int x, int y, int width, int height, bool hidden, const std::string& content)
-    : Element(x, y, width, height, hidden, content) {}
+Box::Box(Attributes attributes)
+    : Element(attributes) {}
 
 // Render the box and its elements
 void Box::render(sf::RenderWindow& window)
 {
-    if (hidden)
+    if (attr.hidden)
         return;
 
     // Create the box shape
     sf::RectangleShape boxShape;
-    boxShape.setSize(sf::Vector2f(width, height));
-    boxShape.setPosition(x, y);
+    boxShape.setSize(sf::Vector2f(attr.width, attr.height));
+    boxShape.setPosition(attr.posnx, attr.posny);
 
     // Set the background color
     boxShape.setFillColor(sf::Color(0xF7, 0xF7, 0xF7)); // Default: white-ish

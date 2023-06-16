@@ -2,24 +2,24 @@
 
 using namespace reng;
 
-ImageView::ImageView(int x, int y, int width, int height, bool hidden, const std::string& label, const std::string& imagePath)
-    : Element(x, y, width, height, hidden, label)
+ImageView::ImageView(const std::string& imagePath, Attributes attributes)
+    : imagePath(imagePath), Element(attributes)
 {
     if (!imagePath.empty()) {
         if (!texture.loadFromFile(imagePath)) {
             std::cout << "Failed to load image: " << imagePath << std::endl;
         } else {
             sprite.setTexture(texture);
-            sprite.setPosition(x, y);
-            sprite.setScale(static_cast<float>(width) / texture.getSize().x,
-                            static_cast<float>(height) / texture.getSize().y);
+            sprite.setPosition(attr.posnx, attr.posny);
+            sprite.setScale(static_cast<float>(attr.width) / texture.getSize().x,
+                            static_cast<float>(attr.height) / texture.getSize().y);
         }
     }
 }
 
 void ImageView::render(sf::RenderWindow& window)
 {
-    if (hidden || texture.getSize().x == 0 || texture.getSize().y == 0)
+    if (attr.hidden || texture.getSize().x == 0 || texture.getSize().y == 0)
         return;
 
     // Render the image

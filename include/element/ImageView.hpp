@@ -2,19 +2,20 @@
 #define IMAGEVIEW_HPP
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include <string>
-#include "Element.hpp" // Include the Element class header file
+
+#include "Element.hpp"
 
 namespace reng
 {
-    class ImageView : public Element
+    class ImageView : Element
     {
         sf::Texture texture;
         sf::Sprite sprite;
 
     public:
-        ImageView(int x, int y, int width, int height, bool hidden, const std::string& label, const std::string& imagePath);
+        ImageView(const std::string& imagePath);
+        ImageView(const std::string& imagePath, Attributes attributes);
         void render(sf::RenderWindow& window) override;
     };
 }

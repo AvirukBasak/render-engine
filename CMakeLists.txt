@@ -9,6 +9,7 @@ include_directories(include)
 
 # List all the source files
 set(SOURCES
+    src/element/config/Attributes.cpp
     src/element/Element.cpp
     src/element/Box.cpp
     src/element/ImageView.cpp
@@ -18,7 +19,7 @@ set(SOURCES
     src/element/TextInput.cpp
     src/element/Button.cpp
     src/util/util.cpp
-    src/render.cpp
+    src/reng.cpp
 )
 
 # Create the static library

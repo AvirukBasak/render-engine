@@ -1,17 +1,16 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
-#include <list>
+#include "config/Attributes.hpp"
 
-class Element
+namespace reng
 {
-protected:
-    int x, y;
-    int width, height;
-    bool hidden;
-    std::string content;
-    std::list<Element*> elements;
+    class Element
+    {
+    protected:
+        constexpr static float CORNER_RADIUS = 10.f;
+        Attributes attr;
 
-public:
-    Element(int x, int y, int width, int height, bool hidden, const std::string& content);
-    virtual void render(sf::RenderWindow& window) = 0;
-};
+    public:
+        Element(Attributes attributes);
+        virtual void render(sf::RenderWindow& window) = 0;
+    };
+}
