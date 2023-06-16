@@ -4,10 +4,7 @@ using namespace reng;
 
 // Constructor
 Box::Box(Attributes attributes)
-    : Element(attributes)
-{
-    
-}
+    : Element(attributes) {}
 
 // Render the box and its elements
 void Box::render(sf::RenderWindow& window)
