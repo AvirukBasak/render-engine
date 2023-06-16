@@ -14,7 +14,7 @@ void reng::reng(Box box, std::function<void (sf::Window& window)> callback)
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
-            callback(window);
+            if (callback) callback(window);
         }
         window.display();
     }
