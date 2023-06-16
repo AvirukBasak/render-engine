@@ -3,7 +3,7 @@
 using namespace reng;
 
 Attributes::Attributes(int posnx, int posny, int width, int height)
-  : name(""),
+  : name(nullptr),
     posnx(posnx),
     posny(posny),
     width(width),
