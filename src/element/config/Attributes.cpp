@@ -9,7 +9,7 @@ Attributes::Attributes(int posnx, int posny, int width, int height)
     width(width),
     height(height),
     hidden(false),
-    callback {}
+    callback(nullptr)
 {}
 
 Attributes::Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden)
@@ -19,7 +19,7 @@ Attributes::Attributes(const std::string& name, int posnx, int posny, int width,
     width(width),
     height(height),
     hidden(hidden),
-    callback {}
+    callback(nullptr)
 {}
 
 Attributes::Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden, std::function<void (void)> callback)
