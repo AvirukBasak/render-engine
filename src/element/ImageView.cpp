@@ -5,7 +5,7 @@
 using namespace reng;
 
 ImageView::ImageView(const std::string imagePath, const std::string label)
-    : imagePath(imagePath), Element({0, 0, 1, 1}), label(label)
+    : imagePath(imagePath), Element({0, 0, 1, 1}), labelText(label, sf::Font(), 12)
 {
     if (imagePath.empty())
         throw std::invalid_argument("ImageView::ImageView(imagePath, label): imagePath is empty");
@@ -18,7 +18,7 @@ ImageView::ImageView(const std::string imagePath, const std::string label)
 }
 
 ImageView::ImageView(const std::string imagePath, Attributes attributes, const std::string label)
-    : imagePath(imagePath), Element(attributes), label(label)
+    : imagePath(imagePath), Element(attributes), labelText(label, sf::Font(), 12)
 {
     if (imagePath.empty())
         throw std::invalid_argument("ImageView::ImageView(imagePath, label): imagePath is empty");
@@ -44,12 +44,8 @@ void ImageView::render(sf::RenderWindow& window)
     // Render the image
     window.draw(sprite);
 
-    // Render the content as a label
-    if (!label.empty()) {
-        sf::Text labelText(label, sf::Font(), 12);
-        // Center position the label below the image
-        labelText.setPosition(this->getPosnX() + this->getWidth() / 2 - labelText.getLocalBounds().width / 2,
-                              this->getPosnY() + this->getHeight() + 10);
-        window.draw(labelText);
-    }
+    // Center position the label below the image
+    labelText.setPosition(this->getPosnX() + this->getWidth() / 2 - labelText.getLocalBounds().width / 2,
+                          this->getPosnY() + this->getHeight() + 10);
+    window.draw(labelText);
 }

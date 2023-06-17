@@ -11,7 +11,7 @@ namespace reng
     class ImageView : public Element
     {
         std::string imagePath;
-        std::string label;
+        sf::Text labelText;
         sf::Texture texture;
         sf::Sprite sprite;
 
