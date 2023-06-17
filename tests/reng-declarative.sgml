@@ -1,0 +1,26 @@
+<Window
+    title = "My Form App"
+    width = 500,
+    height = 500 >
+    <Box
+        name = "boxDialog",
+        width = 350,
+        height = 250,
+        posnx = super.width / 2 - this.width / 2,
+        posny = super.height / 2 - this.height / 2 >
+        <TextInput
+            name = "txtName",
+            hint = "Enter your name",
+            width = super.width - 40,
+            height = 30,
+            posnx = 20,
+            posny = 50 />
+        <Button
+            name = "btnSubmit",
+            label = "Submit",
+            width = 50,
+            height = 30,
+            posnx = super.width - this.width - 20,
+            posny = super.height - this.height - 20 />
+    </Box>
+</Window>
