@@ -2,6 +2,7 @@
 #define BOX_HPP
 
 #include <SFML/Graphics.hpp>
+#include <memory>
 #include <string>
 #include <list>
 
@@ -12,12 +13,19 @@ namespace reng
     class Box : public Element
     {
         sf::RectangleShape boxShape;
-        std::list<Element*> elements;
+
+        // reason map isn't used: order of pushing into list is maintained
+        // reason vector isn't used: list insertions and deletions are faster
+        std::list<std::shared_ptr<Element>> elements;
+        std::list<std::shared_ptr<sf::Shape>> shapes;
 
     public:
         Box(Attributes attributes);
         void render(sf::RenderWindow& window) override;
-        void addElement(Element* element);
+        void addElement(const Element* element);
+        void addElement(const sf::Shape* shape);
+        void removeElement(const Element* element);
+        void removeElement(const sf::Shape* shape);
         // overriden
         void setPosnX(int x);
         void setPosnY(int y);
