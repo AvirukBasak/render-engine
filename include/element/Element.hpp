@@ -11,6 +11,7 @@ namespace reng
 
     public:
         Element(Attributes attributes);
+        virtual ~Element();
         virtual void render(sf::RenderWindow& window) = 0;
         std::string getName() const;
         int getPosnX() const;
