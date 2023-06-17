@@ -1,4 +1,5 @@
 #include "element/Element.hpp"
+#include "element/config/Flags.hpp"
 
 using namespace reng;
 
@@ -32,56 +33,68 @@ bool Element::isHidden() {
 
 void Element::setPosnX(int x) {
     attr.posnx = x;
+    reng::Flags::reRender = true;
 }
 
 void Element::setPosnY(int y) {
     attr.posny = y;
+    reng::Flags::reRender = true;
 }
 
 void Element::moveTo(int x, int y) {
     attr.posnx = x;
     attr.posny = y;
+    reng::Flags::reRender = true;
 }
 
 void Element::moveBy(int dx, int dy) {
     attr.posnx += dx;
     attr.posny += dy;
+    reng::Flags::reRender = true;
 }
 
 void Element::setWidth(int width) {
     attr.width = width;
+    reng::Flags::reRender = true;
 }
 
 void Element::setHeight(int height) {
     attr.height = height;
+    reng::Flags::reRender = true;
 }
 
 /** Sets the width and height to new values */
 void Element::resize(int width, int height) {
     attr.width = width;
     attr.height = height;
+    reng::Flags::reRender = true;
 }
 
 /** Increments the width and height by given values */
 void Element::scale(int dWidth, int dHeight) {
     attr.width += dWidth;
     attr.height += dHeight;
+    reng::Flags::reRender = true;
 }
 
 /** Scales the image by a multiplier */
 void Element::scale(int multiplier) {
     attr.width *= multiplier;
     attr.height *= multiplier;
+    reng::Flags::reRender = true;
 }
 
 void Element::hide() {
     attr.hidden = true;
+    reng::Flags::reRender = true;
 }
 
 void Element::show() {
     attr.hidden = false;
+    reng::Flags::reRender = true;
 }
 
 void Element::toggleVisibility() {
     attr.hidden ^= true;
+    reng::Flags::reRender = true;
 }
