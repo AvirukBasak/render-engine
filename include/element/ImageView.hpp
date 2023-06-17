@@ -16,7 +16,7 @@ namespace reng
         sf::Sprite sprite;
 
     public:
-        ImageView(const std::string imagePath, std::string label = "");
+        ImageView(const std::string imagePath, const std::string label = "");
         ImageView(const std::string imagePath, Attributes attributes, const std::string label = "");
         void render(sf::RenderWindow& window) override;
     };
