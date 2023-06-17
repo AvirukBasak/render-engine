@@ -1,3 +1,6 @@
+#ifndef ELEMENT_HPP
+#define ELEMENT_HPP
+
 #include <SFML/Graphics.hpp>
 #include "config/Attributes.hpp"
 
@@ -36,3 +39,5 @@ namespace reng
         void toggleVisibility();
     };
 }
+
+#endif

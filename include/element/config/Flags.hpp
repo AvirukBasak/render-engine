@@ -1,3 +1,6 @@
+#ifndef FLAGS_HPP
+#define FLAGS_HPP
+
 namespace reng
 {
     class Flags
@@ -7,3 +10,5 @@ namespace reng
         static int FPS;
     };
 }
+
+#endif
