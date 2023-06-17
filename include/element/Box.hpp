@@ -30,15 +30,15 @@ namespace reng
         void setPosnX(int x);
         void setPosnY(int y);
         void moveTo(int x, int y);
-        void moveBy(int dx, int dy);
+        void moveBy(float dx, float dy);
         void setWidth(int width);
         void setHeight(int height);
         /** Sets the width and height to new values */
         void resizeTo(int width, int height);
         /** Increments the width and height by given values */
-        void resizeBy(int dWidth, int dHeight);
+        void resizeBy(float dWidth, float dHeight);
         /** Scales the image by a multiplier */
-        void scale(double multiplier);
+        void scale(float multiplier);
     };
 }
 

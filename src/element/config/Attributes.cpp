@@ -2,7 +2,7 @@
 
 using namespace reng;
 
-Attributes::Attributes(int posnx, int posny, int width, int height)
+Attributes::Attributes(float posnx, float posny, float width, float height)
   : name(nullptr),
     posnx(posnx),
     posny(posny),
@@ -12,7 +12,7 @@ Attributes::Attributes(int posnx, int posny, int width, int height)
     callback(nullptr)
 {}
 
-Attributes::Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden)
+Attributes::Attributes(const std::string& name, float posnx, float posny, float width, float height, bool hidden)
   : name(name),
     posnx(posnx),
     posny(posny),
@@ -22,7 +22,7 @@ Attributes::Attributes(const std::string& name, int posnx, int posny, int width,
     callback(nullptr)
 {}
 
-Attributes::Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden, std::function<void (void)> callback)
+Attributes::Attributes(const std::string& name, float posnx, float posny, float width, float height, bool hidden, std::function<void (void)> callback)
   : name(name),
     posnx(posnx),
     posny(posny),

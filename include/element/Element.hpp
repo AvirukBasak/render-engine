@@ -17,23 +17,23 @@ namespace reng
         virtual ~Element();
         virtual void render(sf::RenderWindow& window) = 0;
         std::string getName() const;
-        int getPosnX() const;
-        int getPosnY() const;
-        int getWidth() const;
-        int getHeight() const;
+        float getPosnX() const;
+        float getPosnY() const;
+        float getWidth() const;
+        float getHeight() const;
         bool isHidden() const;
         void setPosnX(int x);
         void setPosnY(int y);
         void moveTo(int x, int y);
-        void moveBy(int dx, int dy);
+        void moveBy(float dx, float dy);
         void setWidth(int width);
         void setHeight(int height);
         /** Sets the width and height to new values */
         void resizeTo(int width, int height);
         /** Increments the width and height by given values */
-        void resizeBy(int dWidth, int dHeight);
+        void resizeBy(float dWidth, float dHeight);
         /** Scales the element by a multiplier */
-        void scale(double multiplier);
+        void scale(float multiplier);
         void hide();
         void show();
         void toggleVisibility();

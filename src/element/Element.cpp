@@ -12,19 +12,19 @@ std::string Element::getName() const {
     return attr.name;
 }
 
-int Element::getPosnX() const {
+float Element::getPosnX() const {
     return attr.posnx;
 }
 
-int Element::getPosnY() const {
+float Element::getPosnY() const {
     return attr.posny;
 }
 
-int Element::getWidth() const {
+float Element::getWidth() const {
     return attr.width;
 }
 
-int Element::getHeight() const {
+float Element::getHeight() const {
     return attr.height;
 }
 
@@ -48,7 +48,7 @@ void Element::moveTo(int x, int y) {
     reng::Flags::reRender = true;
 }
 
-void Element::moveBy(int dx, int dy) {
+void Element::moveBy(float dx, float dy) {
     attr.posnx += dx;
     attr.posny += dy;
     reng::Flags::reRender = true;
@@ -72,16 +72,16 @@ void Element::resizeTo(int width, int height) {
 }
 
 /** Increments the width and height by given values */
-void Element::resizeBy(int dWidth, int dHeight) {
+void Element::resizeBy(float dWidth, float dHeight) {
     attr.width += dWidth;
     attr.height += dHeight;
     reng::Flags::reRender = true;
 }
 
 /** Scales the image by a multiplier */
-void Element::scale(double multiplier) {
-    attr.width = static_cast<int>(attr.width * multiplier);
-    attr.height = static_cast<int>(attr.height * multiplier);
+void Element::scale(float multiplier) {
+    attr.width = attr.width * multiplier;
+    attr.height = attr.height * multiplier;
     reng::Flags::reRender = true;
 }
 

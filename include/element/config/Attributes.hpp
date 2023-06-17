@@ -10,16 +10,16 @@ namespace reng
     {
     public:
         std::string name;
-        int posnx;
-        int posny;
-        int width;
-        int height;
+        float posnx;
+        float posny;
+        float width;
+        float height;
         bool hidden;
         std::function<void (void)> callback;
 
-        Attributes(int posnx, int posny, int width, int height);
-        Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden);
-        Attributes(const std::string& name, int posnx, int posny, int width, int height, bool hidden, std::function<void (void)> callback);
+        Attributes(float posnx, float posny, float width, float height);
+        Attributes(const std::string& name, float posnx, float posny, float width, float height, bool hidden);
+        Attributes(const std::string& name, float posnx, float posny, float width, float height, bool hidden, std::function<void (void)> callback);
     };
 }
 

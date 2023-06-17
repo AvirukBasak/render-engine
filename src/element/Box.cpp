@@ -134,7 +134,7 @@ void Box::moveTo(int x, int y) {
     Element::moveTo(x, y);
 }
 
-void Box::moveBy(int dx, int dy) {
+void Box::moveBy(float dx, float dy) {
     // update for the elements
     for (auto element : elements)
         element->moveBy(dx, dy);
@@ -182,7 +182,7 @@ void Box::resizeTo(int width, int height) {
 }
 
 /** Increments the width and height by given values */
-void Box::resizeBy(int dWidth, int dHeight) {
+void Box::resizeBy(float dWidth, float dHeight) {
     for (auto element : elements)
         element->resizeBy(dWidth, dHeight);
     // must be placed after updates to children
@@ -190,7 +190,7 @@ void Box::resizeBy(int dWidth, int dHeight) {
 }
 
 /** Scales the image by a multiplier */
-void Box::scale(double multiplier) {
+void Box::scale(float multiplier) {
     for (auto element : elements)
         element->scale(multiplier);
     // must be placed after updates to children

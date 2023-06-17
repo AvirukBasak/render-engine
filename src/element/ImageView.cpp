@@ -26,8 +26,8 @@ ImageView::ImageView(const std::string imagePath, Attributes attributes, const s
         throw std::invalid_argument("ImageView::ImageView(imagePath, label): file not found");
     sprite.setTexture(texture);
     sprite.setPosition(this->getPosnX(), this->getPosnY());
-    sprite.setScale(static_cast<float>(this->getWidth()) / texture.getSize().x,
-                    static_cast<float>(this->getHeight()) / texture.getSize().y);
+    sprite.setScale(this->getWidth() / texture.getSize().x,
+                    this->getHeight() / texture.getSize().y);
 }
 
 void ImageView::render(sf::RenderWindow& window)
@@ -38,8 +38,8 @@ void ImageView::render(sf::RenderWindow& window)
         return;
 
     sprite.setPosition(this->getPosnX(), this->getPosnY());
-    sprite.setScale(static_cast<float>(this->getWidth()) / texture.getSize().x,
-                    static_cast<float>(this->getHeight()) / texture.getSize().y);
+    sprite.setScale(this->getWidth() / texture.getSize().x,
+                    this->getHeight() / texture.getSize().y);
 
     // Render the image
     window.draw(sprite);
