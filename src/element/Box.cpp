@@ -88,12 +88,12 @@ void Box::setPosnX(int x) {
         // Set children posnx accordingly
         shape->setPosition(x + (x_this - x_shape), shape->getPosition().y);
     }
-    // must be places after updates to children
+    // must be placed after updates to children
     Element::setPosnX(x);
 }
 
 void Box::setPosnY(int y) {
-    // udapet for the elements
+    // update for the elements
     for (auto element : elements) {
         int y_this = this->getPosnY();
         int y_element = element->getPosnY();
@@ -107,11 +107,12 @@ void Box::setPosnY(int y) {
         // Set children posnx accordingly
         shape->setPosition(shape->getPosition().x, y + (y_this - y_shape));
     }
-    // must be places after updates to children
+    // must be placed after updates to children
     Element::setPosnY(y);
 }
 
 void Box::moveTo(int x, int y) {
+    // update for the elements
     for (auto element : elements) {
         int x_this = this->getPosnX();
         int x_element = element->getPosnX();
@@ -120,14 +121,27 @@ void Box::moveTo(int x, int y) {
         // Set children posn accordingly
         element->moveTo(x + (x_this - x_element), y + (y_this - y_element));
     }
-    // must be places after updates to children
+    // update for the shapes
+    for (auto shape : shapes) {
+        int x_this = this->getPosnX();
+        int x_shape = shape->getPosition().x;
+        int y_this = this->getPosnY();
+        int y_shape = shape->getPosition().y;
+        // Set children posn accordingly
+        shape->setPosition(x + (x_this - x_shape), y + (y_this - y_shape));
+    }
+    // must be placed after updates to children
     Element::moveTo(x, y);
 }
 
 void Box::moveBy(int dx, int dy) {
+    // update for the elements
     for (auto element : elements)
         element->moveBy(dx, dy);
-    // must be places after updates to children
+    // update for the shapes
+    for (auto shape : shapes)
+        shape->move(dx, dy);
+    // must be placed after updates to children
     Element::moveBy(dx, dy);
 }
 
@@ -138,7 +152,7 @@ void Box::setWidth(int width) {
         // Set children width accordingly
         element->setWidth(width + (w_this - w_element));
     }
-    // must be places after updates to children
+    // must be placed after updates to children
     Element::setWidth(width);
 }
 
@@ -149,7 +163,7 @@ void Box::setHeight(int height) {
         // Set children height accordingly
         element->setHeight(height + (h_this - h_element));
     }
-    // must be places after updates to children
+    // must be placed after updates to children
     Element::setHeight(height);
 }
 
@@ -163,7 +177,7 @@ void Box::resizeTo(int width, int height) {
         // Set children dimension accordingly
         element->resizeTo(width + (w_this - w_element), height + (h_this - h_element));
     }
-    // must be places after updates to children
+    // must be placed after updates to children
     Element::resizeTo(width, height);
 }
 
@@ -171,7 +185,7 @@ void Box::resizeTo(int width, int height) {
 void Box::resizeBy(int dWidth, int dHeight) {
     for (auto element : elements)
         element->resizeBy(dWidth, dHeight);
-    // must be places after updates to children
+    // must be placed after updates to children
     Element::resizeBy(dWidth, dHeight);
 }
 
@@ -179,6 +193,6 @@ void Box::resizeBy(int dWidth, int dHeight) {
 void Box::scale(double multiplier) {
     for (auto element : elements)
         element->scale(multiplier);
-    // must be places after updates to children
+    // must be placed after updates to children
     Element::scale(multiplier);
 }
