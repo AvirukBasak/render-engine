@@ -47,8 +47,9 @@ void ImageView::render(sf::RenderWindow& window)
     // Render the content as a label
     if (!label.empty()) {
         sf::Text labelText(label, sf::Font(), 12);
-        // Position the label below the image
-        labelText.setPosition(this->getPosnX(), this->getPosnY() + this->getHeight() + 5);
+        // Center position the label below the image
+        labelText.setPosition(this->getPosnX() + this->getWidth() / 2 - labelText.getLocalBounds().width / 2,
+                              this->getPosnY() + this->getHeight() + 10);
         window.draw(labelText);
     }
 }
