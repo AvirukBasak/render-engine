@@ -73,7 +73,8 @@ void Box::removeElement(sf::Shape* shape)
 
 // overriden
 
-void Box::setPosnX(int x) {
+void Box::setPosnX(int x)
+{
     // update for the elements
     for (auto element : elements) {
         int x_this = this->getPosnX();
@@ -92,7 +93,8 @@ void Box::setPosnX(int x) {
     Element::setPosnX(x);
 }
 
-void Box::setPosnY(int y) {
+void Box::setPosnY(int y)
+{
     // update for the elements
     for (auto element : elements) {
         int y_this = this->getPosnY();
@@ -111,7 +113,8 @@ void Box::setPosnY(int y) {
     Element::setPosnY(y);
 }
 
-void Box::moveTo(int x, int y) {
+void Box::moveTo(int x, int y)
+{
     // update for the elements
     for (auto element : elements) {
         int x_this = this->getPosnX();
@@ -134,7 +137,8 @@ void Box::moveTo(int x, int y) {
     Element::moveTo(x, y);
 }
 
-void Box::moveBy(float dx, float dy) {
+void Box::moveBy(float dx, float dy)
+{
     // update for the elements
     for (auto element : elements)
         element->moveBy(dx, dy);
@@ -145,54 +149,102 @@ void Box::moveBy(float dx, float dy) {
     Element::moveBy(dx, dy);
 }
 
-void Box::setWidth(int width) {
+void Box::setWidth(int width)
+{
+    // update for the elements
     for (auto element : elements) {
         int w_this = this->getWidth();
         int w_element = element->getWidth();
         // Set children width accordingly
         element->setWidth(width + (w_this - w_element));
     }
+    // update for the shapes
+    for (auto shape : shapes) {
+        int w_this = this->getWidth();
+        int w_shape = shape->getLocalBounds().width;
+        /* Set children width accordingly:
+           Multiply (new dimension / current) with the current to get new */
+        shape->setScale((width + (w_this - w_shape)) / w_shape, 1.f);
+    }
     // must be placed after updates to children
     Element::setWidth(width);
 }
 
-void Box::setHeight(int height) {
+void Box::setHeight(int height)
+{
+    // update for the elements
     for (auto element : elements) {
         int h_this = this->getHeight();
         int h_element = element->getHeight();
         // Set children height accordingly
         element->setHeight(height + (h_this - h_element));
     }
+    // update for the shapes
+    for (auto shape : shapes) {
+        int h_this = this->getHeight();
+        int h_shape = shape->getLocalBounds().height;
+        /* Set children width accordingly:
+           Multiply (new dimension / current) with the current to get new */
+        shape->setScale(1.f, (height + (h_this - h_shape)) / h_shape);
+    }
     // must be placed after updates to children
     Element::setHeight(height);
 }
 
 /** Sets the width and height to new values */
-void Box::resizeTo(int width, int height) {
+void Box::resizeTo(int width, int height)
+{
+    // update for the elements
     for (auto element : elements) {
         int w_this = this->getWidth();
         int w_element = element->getWidth();
         int h_this = this->getHeight();
         int h_element = element->getHeight();
         // Set children dimension accordingly
-        element->resizeTo(width + (w_this - w_element), height + (h_this - h_element));
+        element->resizeTo(width + (w_this - w_element),
+                          height + (h_this - h_element));
+    }
+    // update for the shapes
+    for (auto shape : shapes) {
+        int w_this = this->getWidth();
+        int w_shape = shape->getLocalBounds().width;
+        int h_this = this->getHeight();
+        int h_shape = shape->getLocalBounds().height;
+        /* Set children width accordingly:
+           Multiply (new dimension / current) with the current to get new */
+        shape->setScale((width + (w_this - w_shape)) / w_shape,
+                        (height + (h_this - h_shape)) / h_shape);
     }
     // must be placed after updates to children
     Element::resizeTo(width, height);
 }
 
 /** Increments the width and height by given values */
-void Box::resizeBy(float dWidth, float dHeight) {
+void Box::resizeBy(float dWidth, float dHeight)
+{
+    // update for the elements
     for (auto element : elements)
         element->resizeBy(dWidth, dHeight);
+    // update for the shapes
+    for (auto shape : shapes) {
+        int w_shape = shape->getLocalBounds().width;
+        int h_shape = shape->getLocalBounds().height;
+        shape->setScale((w_shape + dWidth) / w_shape,
+                        (h_shape + dHeight) / h_shape);
+    }
     // must be placed after updates to children
     Element::resizeBy(dWidth, dHeight);
 }
 
 /** Scales the image by a multiplier */
-void Box::scale(float multiplier) {
+void Box::scale(float multiplier)
+{
+    // update for the elements
     for (auto element : elements)
         element->scale(multiplier);
+    // update for the shapes
+    for (auto shape : shapes)
+        shape->setScale(multiplier, multiplier);
     // must be placed after updates to children
     Element::scale(multiplier);
 }

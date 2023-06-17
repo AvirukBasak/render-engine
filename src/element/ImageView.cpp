@@ -5,7 +5,7 @@
 using namespace reng;
 
 ImageView::ImageView(const std::string imagePath, const std::string label)
-    : imagePath(imagePath), Element({0, 0, 0, 0}), label(label)
+    : imagePath(imagePath), Element({0, 0, 1, 1}), label(label)
 {
     if (imagePath.empty())
         throw std::invalid_argument("ImageView::ImageView(imagePath, label): imagePath is empty");
@@ -14,7 +14,7 @@ ImageView::ImageView(const std::string imagePath, const std::string label)
     sprite.setTexture(texture);
     sprite.setPosition(this->getPosnX(), this->getPosnY());
     this->resizeTo(texture.getSize().x, texture.getSize().y);
-    sprite.setScale(1, 1);
+    sprite.setScale(1.f, 1.f);
 }
 
 ImageView::ImageView(const std::string imagePath, Attributes attributes, const std::string label)
