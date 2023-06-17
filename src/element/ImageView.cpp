@@ -37,6 +37,10 @@ void ImageView::render(sf::RenderWindow& window)
     if (this->isHidden() || texture.getSize().x == 0 || texture.getSize().y == 0)
         return;
 
+    sprite.setPosition(this->getPosnX(), this->getPosnY());
+    sprite.setScale(static_cast<float>(this->getWidth()) / texture.getSize().x,
+                    static_cast<float>(this->getHeight()) / texture.getSize().y);
+
     // Render the image
     window.draw(sprite);
 

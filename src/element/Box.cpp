@@ -30,6 +30,9 @@ void Box::render(sf::RenderWindow& window)
 
     if (this->isHidden()) return;
 
+    boxShape.setSize(sf::Vector2f(this->getWidth(), this->getHeight()));
+    boxShape.setPosition(this->getPosnX(), this->getPosnY());
+
     // Render the box
     window.draw(boxShape);
 
