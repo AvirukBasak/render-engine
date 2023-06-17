@@ -107,23 +107,23 @@ void Box::setHeight(int height) {
 }
 
 /** Sets the width and height to new values */
-void Box::resize(int width, int height) {
+void Box::resizeTo(int width, int height) {
     for (auto element : elements) {
         int w_this = this->getWidth();
         int w_element = element->getWidth();
         int h_this = this->getHeight();
         int h_element = element->getHeight();
         // Set children dimension accordingly
-        element->resize(width + (w_this - w_element), height + (h_this - h_element));
+        element->resizeTo(width + (w_this - w_element), height + (h_this - h_element));
     }
-    Element::resize(width, height);
+    Element::resizeTo(width, height);
 }
 
 /** Increments the width and height by given values */
-void Box::scale(int dWidth, int dHeight) {
+void Box::resizeBy(int dWidth, int dHeight) {
     for (auto element : elements)
-        element->scale(dWidth, dHeight);
-    Element::scale(dWidth, dHeight);
+        element->resizeBy(dWidth, dHeight);
+    Element::resizeBy(dWidth, dHeight);
 }
 
 /** Scales the image by a multiplier */

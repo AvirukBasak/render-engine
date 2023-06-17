@@ -13,7 +13,7 @@ ImageView::ImageView(const std::string imagePath, const std::string label)
         throw std::invalid_argument("ImageView::ImageView(imagePath, label): file not found");
     sprite.setTexture(texture);
     sprite.setPosition(this->getPosnX(), this->getPosnY());
-    this->resize(texture.getSize().x, texture.getSize().y);
+    this->resizeTo(texture.getSize().x, texture.getSize().y);
     sprite.setScale(1, 1);
 }
 

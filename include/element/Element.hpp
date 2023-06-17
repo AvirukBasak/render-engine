@@ -25,9 +25,9 @@ namespace reng
         void setWidth(int width);
         void setHeight(int height);
         /** Sets the width and height to new values */
-        void resize(int width, int height);
+        void resizeTo(int width, int height);
         /** Increments the width and height by given values */
-        void scale(int dWidth, int dHeight);
+        void resizeBy(int dWidth, int dHeight);
         /** Scales the element by a multiplier */
         void scale(double multiplier);
         void hide();

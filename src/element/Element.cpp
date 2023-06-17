@@ -64,14 +64,14 @@ void Element::setHeight(int height) {
 }
 
 /** Sets the width and height to new values */
-void Element::resize(int width, int height) {
+void Element::resizeTo(int width, int height) {
     attr.width = width;
     attr.height = height;
     reng::Flags::reRender = true;
 }
 
 /** Increments the width and height by given values */
-void Element::scale(int dWidth, int dHeight) {
+void Element::resizeBy(int dWidth, int dHeight) {
     attr.width += dWidth;
     attr.height += dHeight;
     reng::Flags::reRender = true;
