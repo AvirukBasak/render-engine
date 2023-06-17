@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if ! [[ "$(basename -a $(pwd))" == "RenderEngine" ]]
+if ! [[ "$(basename -a $(pwd))" == "render-engine" ]]
 then
-    echo "build.sh: run this file from the project root"
+    echo "build.sh: run this file from the project root 'render-engine'"
     exit 1
 fi
 
