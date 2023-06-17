@@ -15,12 +15,12 @@ int main(int argc, char const *argv[])
 
     bool flag = true;
 
-    reng::reng(box, [&flag, &shape](auto& window, auto& event) {
-        if (!window.pollEvent(event)) return;
+    reng::reng(box, [&flag, &shape](auto& window) {
         if (shape.getPosition() == sf::Vector2f(5, 5)) flag = true;
         if (shape.getPosition() == sf::Vector2f(495 -150, 495 -150)) flag = false;
         if (flag) shape.move(1, 1);
         else shape.move(-1, -1);
+    }, [](auto& event) {
         reng::Flags::reRender = true;
     });
 

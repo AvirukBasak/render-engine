@@ -7,7 +7,7 @@
 
 namespace reng
 {
-    void reng(Box box, std::function<void (sf::Window& window, sf::Event& event)> callback = nullptr);
+    void reng(Box box, std::function<void (sf::Window& window)> callback, std::function<void (sf::Event& event)> handler = nullptr);
 };
 
 #endif // RENDER_HPP
