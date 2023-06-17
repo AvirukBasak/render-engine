@@ -1,4 +1,3 @@
-#include "element/config/Flags.hpp"
 #include "reng.hpp"
 
 int main(int argc, char const *argv[])
