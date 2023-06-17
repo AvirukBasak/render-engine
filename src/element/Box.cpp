@@ -69,6 +69,14 @@ void Box::setPosnY(int y) {
 }
 
 void Box::moveTo(int x, int y) {
+    for (auto element : elements) {
+        int x_this = this->getPosnX();
+        int x_element = element->getPosnX();
+        int y_this = this->getPosnY();
+        int y_element = element->getPosnY();
+        // Set children posnx accordingly
+        element->moveTo(x + (x_this - x_element), y + (y_this - y_element));
+    }
     Element::moveTo(x, y);
 }
 
@@ -93,14 +101,14 @@ void Box::resize(int width, int height) {
 
 /** Increments the width and height by given values */
 void Box::scale(int dWidth, int dHeight) {
-    attr.width += dWidth;
-    attr.height += dHeight;
-    reng::Flags::reRender = true;
+    for (auto element : elements)
+        element->scale(dWidth, dHeight);
+    Element::scale(dWidth, dHeight);
 }
 
 /** Scales the image by a multiplier */
-void Box::scale(int multiplier) {
-    attr.width *= multiplier;
-    attr.height *= multiplier;
-    reng::Flags::reRender = true;
+void Box::scale(double multiplier) {
+    for (auto element : elements)
+        element->scale(multiplier);
+    Element::scale(multiplier);
 }
