@@ -22,14 +22,14 @@ namespace reng
         float getWidth() const;
         float getHeight() const;
         bool isHidden() const;
-        void setPosnX(int x);
-        void setPosnY(int y);
-        void moveTo(int x, int y);
+        void setPosnX(float x);
+        void setPosnY(float y);
+        void moveTo(float x, float y);
         void moveBy(float dx, float dy);
-        void setWidth(int width);
-        void setHeight(int height);
+        void setWidth(float width);
+        void setHeight(float height);
         /** Sets the width and height to new values */
-        void resizeTo(int width, int height);
+        void resizeTo(float width, float height);
         /** Increments the width and height by given values */
         void resizeBy(float dWidth, float dHeight);
         /** Scales the element by a multiplier */

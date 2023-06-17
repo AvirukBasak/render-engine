@@ -32,17 +32,17 @@ bool Element::isHidden() const {
     return attr.hidden;
 }
 
-void Element::setPosnX(int x) {
+void Element::setPosnX(float x) {
     attr.posnx = x;
     reng::Flags::reRender = true;
 }
 
-void Element::setPosnY(int y) {
+void Element::setPosnY(float y) {
     attr.posny = y;
     reng::Flags::reRender = true;
 }
 
-void Element::moveTo(int x, int y) {
+void Element::moveTo(float x, float y) {
     attr.posnx = x;
     attr.posny = y;
     reng::Flags::reRender = true;
@@ -54,18 +54,18 @@ void Element::moveBy(float dx, float dy) {
     reng::Flags::reRender = true;
 }
 
-void Element::setWidth(int width) {
+void Element::setWidth(float width) {
     attr.width = width;
     reng::Flags::reRender = true;
 }
 
-void Element::setHeight(int height) {
+void Element::setHeight(float height) {
     attr.height = height;
     reng::Flags::reRender = true;
 }
 
 /** Sets the width and height to new values */
-void Element::resizeTo(int width, int height) {
+void Element::resizeTo(float width, float height) {
     attr.width = width;
     attr.height = height;
     reng::Flags::reRender = true;
@@ -80,8 +80,8 @@ void Element::resizeBy(float dWidth, float dHeight) {
 
 /** Scales the image by a multiplier */
 void Element::scale(float multiplier) {
-    attr.width = attr.width * multiplier;
-    attr.height = attr.height * multiplier;
+    attr.width *= multiplier;
+    attr.height *= multiplier;
     reng::Flags::reRender = true;
 }
 

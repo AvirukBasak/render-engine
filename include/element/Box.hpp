@@ -27,14 +27,14 @@ namespace reng
         void removeElement(Element* element);
         void removeElement(sf::Shape* shape);
         // overriden
-        void setPosnX(int x);
-        void setPosnY(int y);
-        void moveTo(int x, int y);
+        void setPosnX(float x);
+        void setPosnY(float y);
+        void moveTo(float x, float y);
         void moveBy(float dx, float dy);
-        void setWidth(int width);
+        void setWidth(float width);
         void setHeight(int height);
         /** Sets the width and height to new values */
-        void resizeTo(int width, int height);
+        void resizeTo(float width, float height);
         /** Increments the width and height by given values */
         void resizeBy(float dWidth, float dHeight);
         /** Scales the image by a multiplier */
