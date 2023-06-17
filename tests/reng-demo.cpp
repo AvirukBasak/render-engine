@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
     constexpr int WIDTH = 500;
     constexpr int HEIGHT = 500;
 
-    reng::Box box(reng::Attributes("Dancing Box", 0, 0, WIDTH, HEIGHT, false));
+    reng::Box box(reng::Attributes("Dancing Box", 0, 0, WIDTH, HEIGHT));
 
     sf::CircleShape shape(70, 4);
     shape.move(WIDTH /2 -70, HEIGHT /2 -70);
