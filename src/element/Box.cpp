@@ -1,18 +1,13 @@
 #include "element/Box.hpp"
+#include "element/config/Flags.hpp"
 
 using namespace reng;
 
 // Constructor
 Box::Box(Attributes attributes)
-    : Element(attributes) {}
-
-// Render the box and its elements
-void Box::render(sf::RenderWindow& window)
+    : Element(attributes)
 {
-    if (this->isHidden()) return;
-
     // Create the box shape
-    sf::RectangleShape boxShape;
     boxShape.setSize(sf::Vector2f(this->getWidth(), this->getHeight()));
     boxShape.setPosition(this->getPosnX(), this->getPosnY());
 
@@ -26,14 +21,21 @@ void Box::render(sf::RenderWindow& window)
     // Set the border radius (rounded corners): this doesn't exist in SFML 2.4.2
     // sf::Vector2f cornerRadii(cornerRadius, cornerRadius);
     // boxShape.setCornerRadii(cornerRadii);
+}
+
+// Render the box and its elements
+void Box::render(sf::RenderWindow& window)
+{
+    reng::Flags::reRender = false;
+
+    if (this->isHidden()) return;
 
     // Render the box
     window.draw(boxShape);
 
     // Render the elements
-    for (auto element : elements) {
+    for (auto element : elements)
         element->render(window);
-    }
 }
 
 // Add an element to the linked list

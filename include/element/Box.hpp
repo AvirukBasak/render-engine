@@ -11,6 +11,7 @@ namespace reng
 {
     class Box : public Element
     {
+        sf::RectangleShape boxShape;
         std::list<Element*> elements;
 
     public:
