@@ -6,6 +6,7 @@ using namespace reng;
 Element::Element(Attributes attributes)
     : attr(attributes) {}
 
+Element::~Element() {}
 
 std::string Element::getName() const {
     return attr.name;

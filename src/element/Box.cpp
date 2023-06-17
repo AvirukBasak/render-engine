@@ -1,6 +1,5 @@
 #include "element/Box.hpp"
 #include "element/config/Flags.hpp"
-#include <memory>
 
 using namespace reng;
 
@@ -22,6 +21,12 @@ Box::Box(Attributes attributes)
     // Set the border radius (rounded corners): this doesn't exist in SFML 2.4.2
     // sf::Vector2f cornerRadii(cornerRadius, cornerRadius);
     // boxShape.setCornerRadii(cornerRadii);
+}
+
+Box::~Box()
+{
+    elements.clear();
+    shapes.clear();
 }
 
 // Render the box and its elements
@@ -46,24 +51,24 @@ void Box::render(sf::RenderWindow& window)
         window.draw(*shape);
 }
 
-void Box::addElement(const Element* element)
+void Box::addElement(Element* element)
 {
-    elements.push_back(std::make_shared<Element>(element));
+    elements.push_back(element);
 }
 
-void Box::addElement(const sf::Shape* shape)
+void Box::addElement(sf::Shape* shape)
 {
-    shapes.push_back(std::make_shared<sf::Shape>(shape));
+    shapes.push_back(shape);
 }
 
-void Box::removeElement(const Element* element)
+void Box::removeElement(Element* element)
 {
-    elements.remove(std::make_shared<Element>(element));
+    elements.remove(element);
 }
 
-void Box::removeElement(const sf::Shape* shape)
+void Box::removeElement(sf::Shape* shape)
 {
-    shapes.remove(std::make_shared<sf::Shape>(shape));
+    shapes.remove(shape);
 }
 
 // overriden

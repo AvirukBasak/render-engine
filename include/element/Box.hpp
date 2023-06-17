@@ -2,7 +2,6 @@
 #define BOX_HPP
 
 #include <SFML/Graphics.hpp>
-#include <memory>
 #include <string>
 #include <list>
 
@@ -16,16 +15,17 @@ namespace reng
 
         // reason map isn't used: order of pushing into list is maintained
         // reason vector isn't used: list insertions and deletions are faster
-        std::list<std::shared_ptr<Element>> elements;
-        std::list<std::shared_ptr<sf::Shape>> shapes;
+        std::list<Element*> elements;
+        std::list<sf::Shape*> shapes;
 
     public:
         Box(Attributes attributes);
+        ~Box();
         void render(sf::RenderWindow& window) override;
-        void addElement(const Element* element);
-        void addElement(const sf::Shape* shape);
-        void removeElement(const Element* element);
-        void removeElement(const sf::Shape* shape);
+        void addElement(Element* element);
+        void addElement(sf::Shape* shape);
+        void removeElement(Element* element);
+        void removeElement(sf::Shape* shape);
         // overriden
         void setPosnX(int x);
         void setPosnY(int y);
