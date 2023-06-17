@@ -1,8 +1,8 @@
 #ifndef RENDER_HPP
 #define RENDER_HPP
 
-#include <element/Box.hpp>
 #include <functional>
+#include "element/Box.hpp"
 
 namespace reng
 {

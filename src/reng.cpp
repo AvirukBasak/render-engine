@@ -1,4 +1,5 @@
-#include <reng.hpp>
+#include "reng.hpp"
+#include "element/config/Flags.hpp"
 
 using namespace reng;
 
@@ -16,8 +17,11 @@ void reng::reng(Box box, std::function<void (sf::Window& window)> callback)
             // updates callback function
             if (callback) callback(window);
         }
-        // window.clear();
-        // if (!box.isHidden()) box.render(window);
+        if (Flags::reRender) {
+            window.clear();
+            box.render(window);
+            Flags::reRender = false;
+        }
         window.display();
     }
 }
