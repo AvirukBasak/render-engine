@@ -1,52 +1,62 @@
 [
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/Element.cpp.o -c /home/aviruk/git/RenderEngine/src/element/Element.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/Element.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/util/util.cpp.o -c /home/aviruk/git/render-engine/src/util/util.cpp",
+  "file": "/home/aviruk/git/render-engine/src/util/util.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/Box.cpp.o -c /home/aviruk/git/RenderEngine/src/element/Box.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/Box.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/reng.cpp.o -c /home/aviruk/git/render-engine/src/reng.cpp",
+  "file": "/home/aviruk/git/render-engine/src/reng.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/ImageView.cpp.o -c /home/aviruk/git/RenderEngine/src/element/ImageView.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/ImageView.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/Box.cpp.o -c /home/aviruk/git/render-engine/src/element/Box.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/Box.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/TextView.cpp.o -c /home/aviruk/git/RenderEngine/src/element/TextView.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/TextView.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/Button.cpp.o -c /home/aviruk/git/render-engine/src/element/Button.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/Button.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/LabelText.cpp.o -c /home/aviruk/git/RenderEngine/src/element/LabelText.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/LabelText.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/config/Flags.cpp.o -c /home/aviruk/git/render-engine/src/element/config/Flags.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/config/Flags.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/TextArea.cpp.o -c /home/aviruk/git/RenderEngine/src/element/TextArea.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/TextArea.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/config/Attributes.cpp.o -c /home/aviruk/git/render-engine/src/element/config/Attributes.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/config/Attributes.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/TextInput.cpp.o -c /home/aviruk/git/RenderEngine/src/element/TextInput.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/TextInput.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/ImageView.cpp.o -c /home/aviruk/git/render-engine/src/element/ImageView.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/ImageView.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/element/Button.cpp.o -c /home/aviruk/git/RenderEngine/src/element/Button.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/element/Button.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/TextArea.cpp.o -c /home/aviruk/git/render-engine/src/element/TextArea.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/TextArea.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/util/util.cpp.o -c /home/aviruk/git/RenderEngine/src/util/util.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/util/util.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/LabelText.cpp.o -c /home/aviruk/git/render-engine/src/element/LabelText.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/LabelText.cpp"
 },
 {
-  "directory": "/home/aviruk/git/RenderEngine/build",
-  "command": "/usr/bin/c++   -I/home/aviruk/git/RenderEngine/include    -o CMakeFiles/RenderEngine.dir/src/render.cpp.o -c /home/aviruk/git/RenderEngine/src/render.cpp",
-  "file": "/home/aviruk/git/RenderEngine/src/render.cpp"
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/TextInput.cpp.o -c /home/aviruk/git/render-engine/src/element/TextInput.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/TextInput.cpp"
+},
+{
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/Element.cpp.o -c /home/aviruk/git/render-engine/src/element/Element.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/Element.cpp"
+},
+{
+  "directory": "/home/aviruk/git/render-engine/build",
+  "command": "/usr/bin/c++   -I/home/aviruk/git/render-engine/include    -o CMakeFiles/RenderEngine.dir/src/element/TextView.cpp.o -c /home/aviruk/git/render-engine/src/element/TextView.cpp",
+  "file": "/home/aviruk/git/render-engine/src/element/TextView.cpp"
 }
 ]
