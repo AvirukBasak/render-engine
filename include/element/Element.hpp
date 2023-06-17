@@ -29,7 +29,7 @@ namespace reng
         /** Increments the width and height by given values */
         void scale(int dWidth, int dHeight);
         /** Scales the element by a multiplier */
-        void scale(int multiplier);
+        void scale(double multiplier);
         void hide();
         void show();
         void toggleVisibility();

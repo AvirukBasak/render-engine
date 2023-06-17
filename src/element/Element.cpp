@@ -78,9 +78,9 @@ void Element::scale(int dWidth, int dHeight) {
 }
 
 /** Scales the image by a multiplier */
-void Element::scale(int multiplier) {
-    attr.width *= multiplier;
-    attr.height *= multiplier;
+void Element::scale(double multiplier) {
+    attr.width = static_cast<int>(attr.width * multiplier);
+    attr.height = static_cast<int>(attr.height * multiplier);
     reng::Flags::reRender = true;
 }
 

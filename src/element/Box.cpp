@@ -69,6 +69,14 @@ void Box::setPosnY(int y) {
 }
 
 void Box::moveTo(int x, int y) {
+    for (auto element : elements) {
+        int x_this = this->getPosnX();
+        int x_element = element->getPosnX();
+        int y_this = this->getPosnY();
+        int y_element = element->getPosnY();
+        // Set children posn accordingly
+        element->moveTo(x + (x_this - x_element), y + (y_this - y_element));
+    }
     Element::moveTo(x, y);
 }
 
@@ -79,28 +87,48 @@ void Box::moveBy(int dx, int dy) {
 }
 
 void Box::setWidth(int width) {
+    for (auto element : elements) {
+        int w_this = this->getWidth();
+        int w_element = element->getWidth();
+        // Set children width accordingly
+        element->setWidth(width + (w_this - w_element));
+    }
     Element::setWidth(width);
 }
 
 void Box::setHeight(int height) {
+    for (auto element : elements) {
+        int h_this = this->getHeight();
+        int h_element = element->getHeight();
+        // Set children height accordingly
+        element->setHeight(height + (h_this - h_element));
+    }
     Element::setHeight(height);
 }
 
 /** Sets the width and height to new values */
 void Box::resize(int width, int height) {
+    for (auto element : elements) {
+        int w_this = this->getWidth();
+        int w_element = element->getWidth();
+        int h_this = this->getHeight();
+        int h_element = element->getHeight();
+        // Set children dimension accordingly
+        element->resize(width + (w_this - w_element), height + (h_this - h_element));
+    }
     Element::resize(width, height);
 }
 
 /** Increments the width and height by given values */
 void Box::scale(int dWidth, int dHeight) {
-    attr.width += dWidth;
-    attr.height += dHeight;
-    reng::Flags::reRender = true;
+    for (auto element : elements)
+        element->scale(dWidth, dHeight);
+    Element::scale(dWidth, dHeight);
 }
 
 /** Scales the image by a multiplier */
-void Box::scale(int multiplier) {
-    attr.width *= multiplier;
-    attr.height *= multiplier;
-    reng::Flags::reRender = true;
+void Box::scale(double multiplier) {
+    for (auto element : elements)
+        element->scale(multiplier);
+    Element::scale(multiplier);
 }
