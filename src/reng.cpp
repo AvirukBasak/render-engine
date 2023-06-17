@@ -9,6 +9,10 @@ void reng::reng(Box box, std::function<void (sf::Window& window)> callback)
 
     box.render(window);
 
+    // FPS system
+    sf::Clock clock;
+    sf::Time timeFrame = sf::seconds(1.f / Flags::FPS);
+
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -17,11 +21,14 @@ void reng::reng(Box box, std::function<void (sf::Window& window)> callback)
             // updates callback function
             if (callback) callback(window);
         }
-        if (Flags::reRender) {
-            window.clear();
-            box.render(window);
-            Flags::reRender = false;
+        if (clock.getElapsedTime() >= timeFrame) {
+            if (Flags::reRender) {
+                window.clear();
+                box.render(window);
+                Flags::reRender = false;
+            }
+            clock.restart();
+            window.display();
         }
-        window.display();
     }
 }

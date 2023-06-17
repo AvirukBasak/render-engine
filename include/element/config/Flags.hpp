@@ -4,5 +4,6 @@ namespace reng
     {
     public:
         static bool reRender;
+        static int FPS;
     };
 }
