@@ -7,27 +7,27 @@ Element::Element(Attributes attributes)
     : attr(attributes) {}
 
 
-std::string Element::getName(){
+std::string Element::getName() const {
     return attr.name;
 }
 
-int Element::getPosnX() {
+int Element::getPosnX() const {
     return attr.posnx;
 }
 
-int Element::getPosnY() {
+int Element::getPosnY() const {
     return attr.posny;
 }
 
-int Element::getWidth() {
+int Element::getWidth() const {
     return attr.width;
 }
 
-int Element::getHeight() {
+int Element::getHeight() const {
     return attr.height;
 }
 
-bool Element::isHidden() {
+bool Element::isHidden() const {
     return attr.hidden;
 }
 

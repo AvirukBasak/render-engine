@@ -12,12 +12,12 @@ namespace reng
     public:
         Element(Attributes attributes);
         virtual void render(sf::RenderWindow& window) = 0;
-        std::string getName();
-        int getPosnX();
-        int getPosnY();
-        int getWidth();
-        int getHeight();
-        bool isHidden();
+        std::string getName() const;
+        int getPosnX() const;
+        int getPosnY() const;
+        int getWidth() const;
+        int getHeight() const;
+        bool isHidden() const;
         void setPosnX(int x);
         void setPosnY(int y);
         void moveTo(int x, int y);
