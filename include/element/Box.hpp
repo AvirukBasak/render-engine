@@ -18,6 +18,19 @@ namespace reng
         Box(Attributes attributes);
         void render(sf::RenderWindow& window) override;
         void addElement(Element* element);
+        // overriden
+        void setPosnX(int x);
+        void setPosnY(int y);
+        void moveTo(int x, int y);
+        void moveBy(int dx, int dy);
+        void setWidth(int width);
+        void setHeight(int height);
+        /** Sets the width and height to new values */
+        void resize(int width, int height);
+        /** Increments the width and height by given values */
+        void scale(int dWidth, int dHeight);
+        /** Scales the image by a multiplier */
+        void scale(int multiplier);
     };
 }
 

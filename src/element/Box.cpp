@@ -41,8 +41,66 @@ void Box::render(sf::RenderWindow& window)
         element->render(window);
 }
 
-// Add an element to the linked list
 void Box::addElement(Element* element)
 {
     elements.push_back(element);
+}
+
+// overriden
+
+void Box::setPosnX(int x) {
+    for (auto element : elements) {
+        int x_this = this->getPosnX();
+        int x_element = element->getPosnX();
+        // Set children posnx accordingly
+        element->setPosnX(x + (x_this - x_element));
+    }
+    Element::setPosnX(x);
+}
+
+void Box::setPosnY(int y) {
+    for (auto element : elements) {
+        int y_this = this->getPosnY();
+        int y_element = element->getPosnY();
+        // Set children posny accordingly
+        element->setPosnX(y + (y_this - y_element));
+    }
+    Element::setPosnY(y);
+}
+
+void Box::moveTo(int x, int y) {
+    Element::moveTo(x, y);
+}
+
+void Box::moveBy(int dx, int dy) {
+    for (auto element : elements)
+        element->moveBy(dx, dy);
+    Element::moveBy(dx, dy);
+}
+
+void Box::setWidth(int width) {
+    Element::setWidth(width);
+}
+
+void Box::setHeight(int height) {
+    Element::setHeight(height);
+}
+
+/** Sets the width and height to new values */
+void Box::resize(int width, int height) {
+    Element::resize(width, height);
+}
+
+/** Increments the width and height by given values */
+void Box::scale(int dWidth, int dHeight) {
+    attr.width += dWidth;
+    attr.height += dHeight;
+    reng::Flags::reRender = true;
+}
+
+/** Scales the image by a multiplier */
+void Box::scale(int multiplier) {
+    attr.width *= multiplier;
+    attr.height *= multiplier;
+    reng::Flags::reRender = true;
 }
