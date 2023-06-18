@@ -45,6 +45,8 @@ void ImageView::render(sf::RenderWindow& window)
     // Render the image
     window.draw(sprite);
 
+    if (labelText.getString().isEmpty()) return;
+
     // Center position the label below the image
     labelText.setPosition(this->getPosnX() + this->getWidth() / 2 - labelText.getLocalBounds().width / 2,
                           this->getPosnY() + this->getHeight() + 10);
