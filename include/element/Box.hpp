@@ -15,24 +15,24 @@ namespace reng
 
         // reason map isn't used: order of pushing into list is maintained
         // reason vector isn't used: list insertions and deletions are faster
-        std::list<Element*> elements;
-        std::list<sf::Shape*> shapes;
+        std::list<Element *> elements;
+        std::list<sf::Shape *> shapes;
 
     public:
         Box(Attributes attributes);
         ~Box();
-        void render(sf::RenderWindow& window) override;
-        void addElement(Element* element);
-        void addElement(sf::Shape* shape);
-        void removeElement(Element* element);
-        void removeElement(sf::Shape* shape);
+        void render(sf::RenderWindow &window) override;
+        void addElement(Element *element);
+        void addElement(sf::Shape *shape);
+        void removeElement(Element *element);
+        void removeElement(sf::Shape *shape);
         // overriden
         void setPosnX(float x);
         void setPosnY(float y);
         void moveTo(float x, float y);
         void moveBy(float dx, float dy);
         void setWidth(float width);
-        void setHeight(int height);
+        void setHeight(float height);
         /** Sets the width and height to new values */
         void resizeTo(float width, float height);
         /** Increments the width and height by given values */

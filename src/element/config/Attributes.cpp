@@ -12,7 +12,8 @@ Attributes::Attributes(float posnx, float posny, float width, float height)
     callback(nullptr)
 {}
 
-Attributes::Attributes(const std::string& name, float posnx, float posny, float width, float height, bool hidden)
+Attributes::Attributes(const std::string name, float posnx, float posny,
+                       float width, float height, bool hidden)
   : name(name),
     posnx(posnx),
     posny(posny),
@@ -22,7 +23,9 @@ Attributes::Attributes(const std::string& name, float posnx, float posny, float 
     callback(nullptr)
 {}
 
-Attributes::Attributes(const std::string& name, float posnx, float posny, float width, float height, bool hidden, std::function<void (void)> callback)
+Attributes::Attributes(const std::string name, float posnx, float posny,
+                       float width, float height, bool hidden,
+                       std::function<void (void)> callback)
   : name(name),
     posnx(posnx),
     posny(posny),

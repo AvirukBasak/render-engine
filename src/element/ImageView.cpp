@@ -17,7 +17,8 @@ ImageView::ImageView(const std::string imagePath, const std::string label)
     sprite.setScale(1.f, 1.f);
 }
 
-ImageView::ImageView(const std::string imagePath, Attributes attributes, const std::string label)
+ImageView::ImageView(const std::string imagePath, Attributes attributes,
+                     const std::string label)
     : imagePath(imagePath), Element(attributes), labelText(label, sf::Font(), 12)
 {
     if (imagePath.empty())

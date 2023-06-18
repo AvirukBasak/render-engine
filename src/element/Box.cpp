@@ -30,7 +30,7 @@ Box::~Box()
 }
 
 // Render the box and its elements
-void Box::render(sf::RenderWindow& window)
+void Box::render(sf::RenderWindow &window)
 {
     reng::Flags::reRender = false;
 
@@ -51,22 +51,22 @@ void Box::render(sf::RenderWindow& window)
         window.draw(*shape);
 }
 
-void Box::addElement(Element* element)
+void Box::addElement(Element *element)
 {
     elements.push_back(element);
 }
 
-void Box::addElement(sf::Shape* shape)
+void Box::addElement(sf::Shape *shape)
 {
     shapes.push_back(shape);
 }
 
-void Box::removeElement(Element* element)
+void Box::removeElement(Element *element)
 {
     elements.remove(element);
 }
 
-void Box::removeElement(sf::Shape* shape)
+void Box::removeElement(sf::Shape *shape)
 {
     shapes.remove(shape);
 }

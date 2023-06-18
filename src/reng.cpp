@@ -2,7 +2,8 @@
 
 using namespace reng;
 
-void reng::reng(Box box, std::function<void (sf::Window& window)> callback, std::function<void (sf::Event& event)> handler)
+void reng::reng(Box &box, std::function<void (sf::Window &)> callback,
+                std::function<void (sf::Event &)> handler)
 {
     sf::RenderWindow window(sf::VideoMode(box.getWidth(), box.getHeight()), box.getName());
 
