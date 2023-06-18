@@ -29,7 +29,7 @@ void reng::reng(Box &box, std::function<void (sf::Window &)> callback,
             /* Render only if this flag is set
                This flag is kept false if there are no changes to be rendered */
             if (Flags::reRender) {
-                window.clear();
+                if (Flags::clearWindow) window.clear();
                 box.render(window);
                 Flags::reRender = false;
             }
