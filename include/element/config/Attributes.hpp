@@ -6,6 +6,7 @@
 
 namespace reng
 {
+    /** A class to encapsulate common attributes of UI elements. */
     class Attributes
     {
     public:

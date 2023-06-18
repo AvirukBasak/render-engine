@@ -5,6 +5,7 @@
 #include "element/Box.hpp"
 #include "element/config/Flags.hpp"
 
+/** Namespace for libreng */
 namespace reng
 {
     void reng(Box &box, std::function<void (sf::Window &)> callback,

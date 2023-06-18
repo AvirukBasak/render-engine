@@ -3,11 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-
 #include "Element.hpp"
 
 namespace reng
 {
+    /** The ImageView conatains and displays an image along with an optional label */
     class ImageView : public Element
     {
         const std::string imagePath;

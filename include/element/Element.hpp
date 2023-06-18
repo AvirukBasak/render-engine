@@ -6,6 +6,7 @@
 
 namespace reng
 {
+    /** An abstract class that represents any element in the UI */
     class Element
     {
     protected:

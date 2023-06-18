@@ -9,12 +9,16 @@
 
 namespace reng
 {
+    /** The Box is a container for other elements.
+        It can contain both reng::Element and sf::Shape types.
+        On changing the position or dimensions of a Box, updates
+            to its children are calculated automatically */
     class Box : public Element
     {
         sf::RectangleShape boxShape;
 
-        // reason map isn't used: order of pushing into list is maintained
-        // reason vector isn't used: list insertions and deletions are faster
+        /* Reason map isn't used: order of pushing into list is maintained.
+           Reason vector isn't used: list insertions and deletions are faster */
         std::list<Element *> elements;
         std::list<sf::Shape *> shapes;
 
@@ -37,7 +41,7 @@ namespace reng
         void resizeTo(float width, float height);
         /** Increments the width and height by given values */
         void resizeBy(float dWidth, float dHeight);
-        /** Scales the image by a multiplier */
+        /** Scales the box by a multiplier */
         void scale(float multiplier);
     };
 }
