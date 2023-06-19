@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(RenderEngine)
 
+# Use C++17 standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Set the output directory for the static library
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
