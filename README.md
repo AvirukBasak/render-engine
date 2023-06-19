@@ -7,7 +7,7 @@ It provides a set of classes and utilities for the purpose.
 
 The following were used during development
 
-- clang version 6.0.0
+- c++ 17
 - cmake version 3.10.2
 - libsfml-dev version 2.4.2
 
